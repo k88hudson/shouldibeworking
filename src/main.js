@@ -27,7 +27,7 @@ require([
   var now = moment();
 
   var startOfDay = moment().hour(8).minute(0);
-  var endOfDay = moment().hour(7 + 12).minute(0);
+  var endOfDay = moment().hour(5 + 12).minute(0);
 
   function getMessage() {
     var diff;
@@ -38,16 +38,18 @@ require([
       } else {
         return 'Wtf why are you up this early...';
       }
-    }
-    else if (now.isAfter(endOfDay)) {
+    } else if (now.isAfter(endOfDay)) {
       diff = moment().subtract(endOfDay).hours();
       if (diff <= 1) {
-        return 'No. It\'s late. Go home.';
-      } else {
-        return 'Are you insane? Go home.';
+        return 'Time to start thinking about packing up.';
       }
-    }
-    else {
+      else if (diff > 1 && diff <= 3) {
+        return 'No. It\'s late. Go home.';
+      }
+      else {
+        return 'Are you insane? Go home!!!!!!';
+      }
+    } else {
       return 'Yes, yes... you should.';
     }
 

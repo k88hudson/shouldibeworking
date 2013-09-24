@@ -41,13 +41,19 @@
 */
 
 body {
+  @media (min-width: @width-medium) {
+    width: 500px;
+    margin: 40px auto;
+  }
   background: black;
   color: white;
-  font-family: menlo;
+  font-family: menlo, monospace;
   text-align: center;
 }
 
 h1 {
+  @media (min-width: @width-medium) {
+    font-size: 50px;
+  }
   font-weight: normal;
-  font-size: 50px;
 }
