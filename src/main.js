@@ -58,5 +58,4 @@ require([
   $message.html(getMessage());
   $time.html(now.format('h:mm a [on a] dddd'));
 
-  // console.log(nunjucks.env.render('src/index.html'));
 });
