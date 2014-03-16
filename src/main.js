@@ -31,6 +31,10 @@ require([
 
   function getMessage() {
     var diff;
+    if (now.day() === 0 || now.day() === 6) {
+      return 'No. It\'s the weekend. Go home.';
+    }
+
     if (now.isBefore(startOfDay)) {
       diff = startOfDay.subtract(moment()).hours();
       if (diff <= 1) {
